@@ -45,17 +45,26 @@ pip install -r requirements.txt
 
 ## Imagens necessárias (não incluídas)
 
-As imagens usadas no relatório original não estão neste repositório —
-adicione-as em `imagens_entrada/` antes de rodar os scripts:
+As imagens usadas no relatório original não estão neste repositório. Duas
+categorias:
+
+**Essenciais** (o exercício foi desenhado em cima delas — sem elas a
+comparação com o relatório não faz sentido):
 
 | Questão | Arquivo esperado | Descrição |
 |---|---|---|
 | 1 e 2 | `lena_gray.bmp` | Imagem clássica de teste, em tons de cinza |
 | 2 | `lena_ruido.bmp` | Mesma imagem com ruído adicionado (**gerada com `gerar_lena_ruido.py`**, veja abaixo) |
-| 3 | `imagem1.png`, `imagem2.png` | Duas formas brancas em fundo preto (200x200), ex.: um quadrado e uma elipse |
-| 4 | `carro.png` | Desenho binário 80x80 (objeto branco em fundo preto) |
 | 5 | `quadro.png` | Imagem colorida com objetos vermelhos (com buraco), e formas azul/verde/amarela (com buracos pretos), sobre fundo com ruído de pontos pretos |
-| 5f | `D_vermelho{1,2,3}.png`, `W_vermelho{1,2,3}.png` | Máscaras D e W (feitas manualmente) para cada um dos 3 objetos vermelhos, usadas na transformada hit-or-miss |
+
+**Livres** (qualquer imagem binária — objeto branco em fundo preto — serve
+pra testar a lógica; não precisa ser igual à do relatório original):
+
+| Questão | Arquivo esperado | Descrição |
+|---|---|---|
+| 3 | `imagem1.png`, `imagem2.png` | Duas formas brancas em fundo preto, mesmo tamanho |
+| 4 | `carro.png` | Qualquer desenho binário (objeto branco em fundo preto) |
+| 5f | `D_vermelho{1,2,3}.png`, `W_vermelho{1,2,3}.png` | Máscaras D e W feitas manualmente a partir dos objetos vermelhos do seu `quadro.png` |
 
 ### Passo a passo para preencher `imagens_entrada/`
 
@@ -66,16 +75,16 @@ adicione-as em `imagens_entrada/` antes de rodar os scripts:
    ```
    Isso lê `imagens_entrada/lena_gray.bmp` e gera `imagens_entrada/lena_ruido.bmp`
    automaticamente com ruído gaussiano.
-3. **`imagem1.png` e `imagem2.png`** (Questão 3) → print das duas formas
-   (quadrado e elipse) do relatório, salve em `imagens_entrada/`.
-4. **`carro.png`** (Questão 4) → print do desenho 80x80 do relatório, salve em
-   `imagens_entrada/`.
-5. **`quadro.png`** (Questão 5) → print da imagem colorida (objetos vermelhos,
+3. **`quadro.png`** (Questão 5) → print da imagem colorida (objetos vermelhos,
    azul, verde, amarelo) do relatório, salve em `imagens_entrada/`.
-6. **`D_vermelho1.png`, `W_vermelho1.png`, `D_vermelho2.png`, ...** (Questão 5f)
-   → print de cada máscara D e W mostradas no relatório para os 3 objetos
-   vermelhos, salve em `imagens_entrada/`.
-7. **Binarize as imagens dos passos 3 a 6** (são todas preto/branco puro; um
+4. **`imagem1.png` e `imagem2.png`** (Questão 3) → duas formas quaisquer,
+   pode desenhar no Paint/GIMP ou usar as do relatório (opcional).
+5. **`carro.png`** (Questão 4) → qualquer desenho binário 80x80 (ou outro
+   tamanho — o código não depende de dimensão fixa).
+6. **`D_vermelho1.png`, `W_vermelho1.png`, `D_vermelho2.png`, ...**
+   (Questão 5f) → recorte/desenhe as máscaras D e W a partir dos objetos
+   vermelhos do seu `quadro.png`, salve em `imagens_entrada/`.
+7. **Binarize as imagens dos passos 4 a 6** (são todas preto/branco puro; um
    print introduz tons de cinza intermediários nas bordas que quebram a
    lógica das funções). Rode, para cada uma:
    ```bash

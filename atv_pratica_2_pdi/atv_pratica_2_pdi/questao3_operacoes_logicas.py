@@ -4,10 +4,11 @@ morfologicas abaixo (uniao, intersecao, diferenca). Cada funcao deve
 receber como parametros duas imagens. Considere que as imagens sao
 objetos brancos em um fundo preto.
 
-Imagens de teste usadas no relatorio original: um quadrado branco
+Imagens de entrada livres: qualquer par de imagens binarias (objeto
+branco em fundo preto) com o mesmo tamanho serve para testar a
+logica. No relatorio original foram usados um quadrado branco
 (imagem1.png) e uma elipse branca (imagem2.png), ambas 200x200,
-feitas no Paint. Substitua pelas suas proprias imagens em
-'imagens_entrada/'.
+feitas no Paint - mas voce pode desenhar/usar outras formas.
 """
 
 import cv2

@@ -4,9 +4,11 @@ morfologicas abaixo. Cada funcao deve receber 3 parametros: a imagem
 a ser transformada, o elemento estruturante e o centro dele.
 Considere que as imagens sao objetos brancos em um fundo preto.
 
-Imagem de teste usada no relatorio original: um desenho 80x80 feito
-no Paint. Substitua por sua propria imagem em 'imagens_entrada/'.
-Elemento estruturante usado: 5x5 de 1s (255), com centro (2, 2).
+Imagem de entrada livre: qualquer imagem binaria (objeto branco em
+fundo preto) serve para testar a logica. No relatorio original foi
+usado um desenho 80x80 feito no Paint (um carrinho), mas o tamanho
+nao importa. Elemento estruturante usado: 5x5 de 1s (255), com
+centro (2, 2).
 """
 
 import cv2
